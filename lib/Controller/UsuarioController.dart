@@ -1,8 +1,4 @@
-
 import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
-
-import 'package:postgres/postgres.dart';
-
 import 'package:untitled/Model/UsuarioModel.dart';
 import 'package:untitled/Model/UsuarioPerfilModel.dart';
 

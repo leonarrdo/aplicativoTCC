@@ -1,7 +1,6 @@
 import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/EspecieModel.dart';
 
-
 class EspecieController {
 
   Future getAllEspecies() async {

@@ -1,10 +1,5 @@
-
 import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
-
-import 'package:postgres/postgres.dart';
-
 import 'package:untitled/Model/PorteModel.dart';
-
 
 class PorteController {
 
