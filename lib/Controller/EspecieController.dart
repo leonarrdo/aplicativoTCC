@@ -1,4 +1,4 @@
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/EspecieModel.dart';
 
 
@@ -8,7 +8,7 @@ class EspecieController {
 
     final  List<Especie> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 

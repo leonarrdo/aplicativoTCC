@@ -1,5 +1,5 @@
 import 'package:untitled/Model/AvisoModel.dart';
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/UsuarioModel.dart';
 import 'package:untitled/Model/AvisoListagemModel.dart';
 
@@ -7,7 +7,7 @@ class AvisosController {
 
   Future insert(Aviso aviso) async {
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -23,7 +23,7 @@ class AvisosController {
   Future getAllAvisos () async{
     final  List<AvisoListagem> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -57,7 +57,7 @@ class AvisosController {
 
     final  List<AvisoListagem> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -90,7 +90,7 @@ class AvisosController {
 
     final  List<AvisoListagem> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -104,7 +104,7 @@ class AvisosController {
 
     final  List<AvisoListagem> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -117,7 +117,7 @@ class AvisosController {
 
   Future getAvisosPorAnimal (int idAnimal) async{
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -136,7 +136,7 @@ class AvisosController {
   Future getAvisosFiltro (String dataInicio, String dataFinal,{int idRaca = 0, int idPorte =0, int idEspecie =0}) async{
     final  List<AvisoListagem> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 

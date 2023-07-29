@@ -41,6 +41,7 @@ dependencies:
   google_maps_flutter: ^2.0.6
   intl: ^0.17.0
   mockito:
+  flutter_dotenv: ^5.1.0
 
 
 

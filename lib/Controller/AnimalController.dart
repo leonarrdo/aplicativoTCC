@@ -1,12 +1,12 @@
 import 'package:untitled/Model/AnimalModel.dart';
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/UsuarioModel.dart';
 
 class AnimalController {
 
   Future insertAnimal(Animal animal) async {
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -25,7 +25,7 @@ class AnimalController {
 
     final  List<Animal> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -56,7 +56,7 @@ class AnimalController {
 
     final  List<Animal> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
     await connection.open();
 
     await connection.query("UPDATE animal SET status = false WHERE idanimal = ${animal.idanimal}");

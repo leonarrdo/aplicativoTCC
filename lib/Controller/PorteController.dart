@@ -1,5 +1,5 @@
 
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 
 import 'package:postgres/postgres.dart';
 
@@ -12,7 +12,7 @@ class PorteController {
 
     final  List<Porte> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 

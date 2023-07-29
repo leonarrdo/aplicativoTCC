@@ -2,7 +2,7 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:untitled/Controller/AvisosController.dart';
 import 'package:untitled/Model/AvisoMapaModel.dart';
 import 'package:untitled/Model/AvisoModel.dart';
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/CoordenadaModel.dart';
 
 
@@ -13,7 +13,7 @@ class CoordenadaController {
 
     late var idCoordenada;
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -35,7 +35,7 @@ class CoordenadaController {
 
     final  List<Coordenada> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -62,7 +62,7 @@ class CoordenadaController {
 
     final  List<AvisoMapa> lista = [];
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 

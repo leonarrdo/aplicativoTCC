@@ -1,6 +1,6 @@
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:untitled/Controller/UsuarioController.dart';
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 import 'package:untitled/Model/EnderecoModel.dart';
 import 'package:untitled/Model/UsuarioModel.dart';
 
@@ -9,7 +9,7 @@ class EnderecoController {
   late var idEndereco;
 
   Future<int> insertEndereco(EnderecoModel endereco) async {
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -40,7 +40,7 @@ class EnderecoController {
   Future updateEndereco (EnderecoModel endereco) async{
 
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 

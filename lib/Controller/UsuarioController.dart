@@ -1,5 +1,5 @@
 
-import 'package:untitled/Model/ConexaoModel.dart';
+import 'package:untitled/databaseConnection.dart' as dataBaseConnection;
 
 import 'package:postgres/postgres.dart';
 
@@ -10,7 +10,7 @@ class UsuarioController {
 
   Future<List<Map<String, Map<String, dynamic>>>> insertUsuario(UsuarioModel usuario) async {
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -28,7 +28,7 @@ class UsuarioController {
   Future buscaIdUsuarioCPF(UsuarioModel usuario) async{
     UsuarioModel user = new UsuarioModel();
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
 
@@ -55,7 +55,7 @@ class UsuarioController {
 
     UsuarioPerfilModel u = new UsuarioPerfilModel();
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
     var results =  await connection.query(
@@ -82,7 +82,7 @@ class UsuarioController {
 
     UsuarioPerfilModel u = new UsuarioPerfilModel();
 
-    var connection = ConexaoModel.getConexao();
+    var connection = dataBaseConnection.getConnection();
 
     await connection.open();
     // print("UPDATE usuario SET nome= '${user.nome}', email= '${user.email}', senha= '${user.senha}' WHERE idusuario = ${user.idusuario}");
